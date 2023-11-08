@@ -32,11 +32,6 @@ userSchema.statics.login = async function(email, password) {
 
 
 
-
-
-
-
-
 //before
 userSchema.pre('save', async function(next) {
     const salt = await bcrypt.genSalt();
