@@ -71,6 +71,7 @@ module.exports.signup_post = async (req,res) =>{
         res.status(400).json({errors})
     }
 }
+
 module.exports.login_post = async (req,res) =>{
     const {email, password} = req.body;
     try {
@@ -82,6 +83,10 @@ module.exports.login_post = async (req,res) =>{
     }
 }
 
+module.exports.logout_get = (req, res) => {
+    res.cookie('jwt', '', { maxAge: 1 });
+    res.redirect('/');
+}
 
 
 
